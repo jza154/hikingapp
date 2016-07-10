@@ -1,102 +1,13 @@
-== README
+To run server:
+rails server -b $IP -p $PORT
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Server link:
+https://doggiewalk-jza154.c9users.io/
 
-Things you may want to cover:
+Admin access:
+https://doggiewalk-jza154.c9users.io/admin
+login: jza154@sfu.ca
+password: 123456
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-
-
-
-Iteration 1 (Purple)
-
-Project Abstract
-The main goal of this application is to create a platform where dog owners and dog enthusiasts can be brought together. Specifically, our service aims to bring people who don’t have the time or simply can’t walk their dogs for whatever reason, and those who have the time and desire but don’t have a dog. 
-
-Customer
-The target audience for our application is separated into two profiles: dog owners and dog walker. The separation is not determined based on demographics but rather on a particular circumstance: people who have dogs but can’t walk them and people who have extra time and desire to walk dogs.
-Dog Owners:
-Dog owners may seek this service for a number of different reasons. For dogs to be healthy, physically and mentally, they need to be walked at least twice a day, preferably three times. Sometimes circumstances change and some people may no longer be able to satisfy this particular dog’s need as much as they would like on their own. It could also be the case that someone had an accident and is unable to walk their dog at all for a short little while, for example. While in some cases there are other family member who can pick up the slack, it isn’t always the case.
-Dog Walkers:
-There are many different people who can fall under this category. Some people might be contemplating getting their own dog and would like to get a little taste of the experience. Students, for example, might be available on a short notice to pick up a dog-walking job and, possibly, earn some extra cash. Some dog shelters have waitlists for people who want to walk dogs. 
-
-Competitive Analysis
-There are a number of companies, such as Paws at Play (http://mydogwalker.ca/), which provide dog-walking services. And while some people might definitely prefer their services, there are people whose demands these companies cannot fulfill. Some people would like more control in choosing who walks their dog, when and where. If the dog walker is needed on a relatively short notice, these companies may not be able to deliver. There are other cases when a dog may not be suitable for a group walk, but private walks can become pricey.
-Our application will aim to fill this niche giving more control to the dog owners as well as dog walkers. 
-
-User Stories
-There are two different types of users. Dog owners and dog walkers will be referred to as regular users. Second type of users are administrators.
-Regular Users
-Sign Up (Iteration 1)
-As a regular user, I want to be able to Sign Up for the service the Doggy Walk provides.
-•	The Sign Up link is located on the home/landing page of the Doggy Walk. After clicking on it, the user is taken to the signup page. There he/she needs to provide an email address and choose and confirm a password. 
-•	Success: New entry is added to the user database, and the user is referred to the home page.
-•	Failure: The signup may fail for different reasons. Email address may have been taken already, and appropriate message will inform the user. Email may have been written in unacceptable format, the appropriate message will pop up. One of the fields might have been left blank, or passwords didn’t match. Messages describing what went wrong will be displayed on the screen.
-
-Sign In (Iteration 1)
-As a regular user, I want to be able to sign in so I can access the content.
-•	The Sign In link is located on the home/landing page. After clicking on it, the user is taken to the sign in page, where he/she will have to provide email and password they registered with. Email and password will be matched with the database.
-•	Success: The user is confirmed and referred to the home page. (Profile page in the later iterations). Choosing Remember Me allows automatic login on the next visit. 
-•	Failure: Empty fields, incorrect format, or if the information doesn’t match with the database, the user will be prompted to try again. 
-
-Password Recovery (later iteration)
-As a regular user, I want to be able to recover/reset my password.
-
-Sign Out (Iteration 1)
-As a regular user, I want to be able to log out from my account.
-•	The Sign Out link will be visible to the users after they successfully signed in. After clicking on the sign out link, the current user session will be terminated and, the user will be referred back to the landing page.
-•	Once the profile pages is implemented, the user will no longer be able to see his/her profile and make changes to it. The user will also not be able to access services offered through Doggy Walk without being logged in.
-
-Profile Update
-As a regular user, I want to be able to update/edit my profile with a relevant information.
-
-Delete Profile
-As a regular user, I want to be able to delete my profile because I no longer wish to use the service.
-
-Administrators
-
-Sign In (Iteration 1)
-As an administrator, I want to be able to sign in, so that I could view a list of all users currently registered, respond to comments (later iterations), and set administrator privileges.
-•	The Sign In link is located on the home/landing page. After clicking on it, the administrator is taken to the sign in page, where he/she will have to provide email and password they registered with. Email and password will be matched with the database. It will also be checked for administrator privileges.
-•	Success: The administrator is confirmed and referred to the home page. Choosing Remember Me allows automatic login on the next visit. 
-•	Failure: Empty fields, incorrect format, or if the information doesn’t match with the database, the user will be prompted to try again. 
-
-Set privileges ()
-As an administrator, I want to be able to set up admin privileges for new administrators.
-
-Sign Up (Iteration 1) ?????????????????????????????/
-As an administrator, I want to be able to create an account with Doggie Walk, so that I could view a list of all users currently registered, respond to comments (later iterations), and set administrator privileges.
-•	The Sign Up link is located on the home/landing page of the Doggy Walk. After clicking on it, the administrator is taken to the signup page. There he/she needs to provide an email address and choose and confirm a password. 
-•	
-
-Sign Out (Iteration 1)
-As an administrator, I want to be able to log out from my account.
-•	The Sign Out link will be visible to the administrators after they successfully signed in. After clicking on the sign out link, the current administrator session will be terminated and, the administrator will be referred back to the landing page.
-•	Once logged out the administrator will no longer have access to the list of users, be able to respond to comments, or set privileges.
-
-
-
-User Interface Requirements
-Describes any customer user interface requirements including graphical user interface requirements. Here you should have sketches or mockups for the main parts of the interface. To save time you may want to use scanned drawings of interface mockups here, instead of Photoshop drawings. You may also use a rapid UI prototype tool such as invisionapp.
+To do:
+https://trello.com/b/Ke4GoTyx/proj
