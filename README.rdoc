@@ -3,9 +3,11 @@ rails server -b $IP -p $PORT
 
 Server link:
 https://doggie-walk-jza154.c9users.io/
+http://peaceful-earth-80361.herokuapp.com/
 
 Admin access:
-https://doggie-walk-jza154.c9users.io/admin
+https://doggie-walk-jza154.c9users.io/admin (cloud9)
+http://peaceful-earth-80361.herokuapp.com/admin (heroku)
 login: admin@sfu.ca
 password: 123456
 

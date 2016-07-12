@@ -52,7 +52,7 @@
                     </button>
                     <a class="navbar-brand page-scroll" href="/">Doggy Walk</a>
                 </div>
-    
+
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
@@ -64,7 +64,7 @@
                                     <%=link_to "All Users", users_path%>
                             </li>
                             <li>
-                                <%=link_to "Posts", posts_path%>
+                                <%=link_to "Bulletin Board", posts_path%>
                             </li>
                             <li>
                                 <%=link_to "My Profile", user_path(current_user) %>
@@ -80,7 +80,6 @@
                                 <%=link_to "Sign up", new_user_registration_path %>
                             </li>
                         <% end %>
-                
                         <!--<li> -->
                         <!--    <a class="page-scroll" href="#about"> About</a>-->
                         <!--</li>-->
@@ -95,6 +94,16 @@
             <!-- /.container-fluid -->
         </nav>
         <%= yield %>
+        
+        
+        
+    <div class = popup>
+        <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+    </div>
+        
+        
         
     </body>
     
