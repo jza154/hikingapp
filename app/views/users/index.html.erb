@@ -16,7 +16,7 @@
         <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
         <%= submit_tag "Search" %>
         <% end %>
-    <% @user.each do |user| %>
+    <% @users.each do |user| %>
         <tr>
             <td><%= gravatar_for (user) %></td> 
             <td><%= user.first_name %> <%= user.last_name %></td>

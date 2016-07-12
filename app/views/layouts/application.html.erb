@@ -59,7 +59,13 @@
                         <li class="hidden">
                             <a href="#page-top"></a>
                         </li>
+                        <li>
+                                <%=link_to "Search", users_path%>
+                        </li>
                         <% if user_signed_in? %>
+                            <li>
+                                <%=link_to "Posts", posts_path%>
+                            </li>
                             <li>
                                 <%=link_to "My Profile", user_path(current_user) %>
                             </li>
@@ -69,11 +75,9 @@
                         <% else %>
                             <li>
                                 <%=link_to "Sign in", new_user_session_path %>
-                                <!--<a class="page-scroll">< %=link_to "Sign in", new_user_session_path %></a>-->
                             </li>
                             <li>
                                 <%=link_to "Sign up", new_user_registration_path %>
-                                <!--<a class="page-scroll">< %=link_to "Sign up", new_user_registration_path %></a-->
                             </li>
                         <% end %>
                 
@@ -112,10 +116,13 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
+                        <li><li><%= link_to 'Privacy', "/privacy" %>
                         </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li><%= link_to 'Terms', "/terms" %>
                         </li>
+                        <li><%= link_to 'Contact Us', "/contact_us" %>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

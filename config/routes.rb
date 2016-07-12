@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   # get 'page/contact'
   
+  get 'privacy'=>'page#privacy'
+ get 'terms'=>'page#terms'
   
     # ContactUS routes
     # resources :contact_from
@@ -21,6 +23,8 @@ Rails.application.routes.draw do
   
     get 'users' => 'users#index'
     # get 'owners' => 'users#dogowner'
+    
+    
   devise_for :users #, :controllers =>{registrations: 'registrations'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

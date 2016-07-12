@@ -7,7 +7,7 @@
 <br/>
 <br/>
 <br/>
-<%= gravatar_for_current (@user) %>
+<%= gravatar_for (@user) %>
 <% if current_user.email == @user.email%>
     <a href="http://gravatar.com/emails" target="_blank">change</a>
 <% end %>
