@@ -2,10 +2,10 @@ To run server:
 rails server -b $IP -p $PORT
 
 Server link:
-https://doggiewalk-jza154.c9users.io/
+https://doggie-walk-jza154.c9users.io/
 
 Admin access:
-https://doggiewalk-jza154.c9users.io/admin
+https://doggie-walk-jza154.c9users.io/admin
 login: jza154@sfu.ca
 password: 123456
 

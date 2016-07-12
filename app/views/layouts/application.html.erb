@@ -61,8 +61,10 @@
                         </li>
                         <% if user_signed_in? %>
                             <li>
+                                <%=link_to "My Profile", user_path(current_user) %>
+                            </li>
+                            <li>
                                 <%=link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                                <!--<a class="page-scroll">< %=link_to "Sign out", destroy_user_session_path, :method => :delete %></a>-->
                             </li>
                         <% else %>
                             <li>

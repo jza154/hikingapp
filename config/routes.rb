@@ -10,8 +10,18 @@ Rails.application.routes.draw do
   # get 'page/about'
 
   # get 'page/contact'
-
-  devise_for :users
+  
+  
+    # ContactUS routes
+    # resources :contact_from
+    get '/contact_us' => 'contacts#new'
+    # get '/contacts'=> 'contacts#index'
+    post 'contacts' => 'contacts#create'
+    delete 'contacts' => 'contacts#destroy'
+  
+    get 'users' => 'users#index'
+    # get 'owners' => 'users#dogowner'
+  devise_for :users #, :controllers =>{registrations: 'registrations'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
