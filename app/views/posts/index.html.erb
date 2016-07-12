@@ -21,13 +21,13 @@
 
 
   <tbody>
-    <% @posts.each do |post| %>
+    <% @posts.each do |pos| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= pos.title %></td>
+        <td><%= pos.content %></td>
+        <td><%= link_to 'Show', pos %></td>
+        <!--<td>< %= link_to 'Edit', edit_post_path(post) %></td>-->
+        <!--<td>< %= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>

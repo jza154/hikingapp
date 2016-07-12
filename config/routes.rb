@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     delete 'contacts' => 'contacts#destroy'
   
     get 'users' => 'users#index'
+    
+    # as :user do
+    #   get 'users/:id', :to => 'devise/registrations#edit', :as => :user_root
+    # end
     # get 'owners' => 'users#dogowner'
     
     

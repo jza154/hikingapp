@@ -1,10 +1,10 @@
 class Post < ActiveRecord::Base
 
-
-def self.search(search)
-  where("Title LIKE ?", "%#{search}%") 
-  where("content LIKE ?", "%#{search}%")
-end
+  # belongs_to :user
+  def self.search(search)
+    where("title LIKE ?", "%#{search}%") 
+    where("content LIKE ?", "%#{search}%")
+  end
 
     
 end
