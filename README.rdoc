@@ -6,7 +6,7 @@ https://doggie-walk-jza154.c9users.io/
 
 Admin access:
 https://doggie-walk-jza154.c9users.io/admin
-login: jza154@sfu.ca
+login: admin@sfu.ca
 password: 123456
 
 To do:
