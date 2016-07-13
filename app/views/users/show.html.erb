@@ -1,9 +1,11 @@
 <% provide(:title, "User Profile") %>
+
 <br/>
 <br/>
 
+<div class="container">
 
-<center><h1><b>Profile <b></h1></center>
+<center><h1><b>My Profile<b></h1></center>
 <br/>
 <br/>
 <br/>
@@ -28,4 +30,7 @@
 <% if current_user.email == @user.email%>
     <%= link_to 'Edit', edit_user_registration_path(@current_user) %> <br>
 <% end %>
+
 <%= link_to 'Back', users_path %>
+
+</div>

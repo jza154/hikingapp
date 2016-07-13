@@ -1,3 +1,9 @@
+<% provide(:title, "Resend Unlock Instructions") %>
+
+<br/>
+<div class="container">
+<br/>
+
 <h2>Resend unlock instructions</h2>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
@@ -14,3 +20,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
