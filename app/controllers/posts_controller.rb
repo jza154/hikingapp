@@ -1,6 +1,7 @@
 class PostsController < InheritedResources::Base
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :post_owner, only: [:edit, :update, :destroy]
   
   # GET /posts
   # GET /posts.json
@@ -77,5 +78,12 @@ class PostsController < InheritedResources::Base
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :content)
+    end
+    
+    def post_owner
+     unless @post.user == current_user
+      flash[:notice] = 'Access denied as you are not owner of this Job'
+      redirect_to post_path
+     end
     end
 end

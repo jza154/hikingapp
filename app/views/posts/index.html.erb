@@ -11,14 +11,16 @@
     <tr>
       <th>Title</th>
       <th>Content</th>
+      <th>User</th>
+      <th>Created At</th>
       <th></th>
     </tr>
   </thead>
   
   <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
-<% end %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <%= submit_tag "Search" %>
+  <% end %>
 
 <br /><br />
 
@@ -27,6 +29,8 @@
       <tr>
         <td><%= pos.title %></td>
         <td><%= truncate( pos.content, :length => 50) %></td>
+        <td><%= pos.user.first_name %> <%= pos.user.last_name %></td>
+        <td><%= pos.created_at %></td>
         <td><%= link_to 'Show', pos %></td>
       </tr>
     <% end %>
