@@ -51,7 +51,7 @@
   </thead>
   <tbody>
     <% @dogs.each do |dog| %>
-        <% if @user.id == dog.owner_id%>
+        <% if @user.id == dog.user_id %>
           <tr>
             <td><%= dog.name %></td>
             <td><%= dog.breed %></td>

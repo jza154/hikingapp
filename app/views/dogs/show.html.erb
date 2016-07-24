@@ -29,12 +29,18 @@
 </p>
 
 <p>
+  <strong>Owner:</strong>
+  <% @user = User.find(@dog.user_id) %>
+  <%= @user.first_name %> <%= @user.last_name %>
+</p>
+
+<p>
   <strong>About:</strong>
   <%= @dog.about %>
 </p>
 
-<% if current_user.id == @dog.owner_id%>
+<% if current_user.id == @dog.user_id%>
   <%= link_to 'Edit', edit_dog_path(@dog) %> |
 <% end %>
-<%= link_to 'Owner Profile', user_path(@dog.owner_id) %> |
+<%= link_to 'Owner Profile', user_path(@dog.user_id) %> |
 <%= link_to 'Show All Dogs', dogs_path %>

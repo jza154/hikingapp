@@ -27,7 +27,7 @@ class DogsController < ApplicationController
   # POST /dogs.json
   def create
     @dog = Dog.new(dog_params)
-    @dog.owner_id = current_user.id
+    @dog.user_id = current_user.id
     
     respond_to do |format|
       if @dog.save
@@ -76,7 +76,7 @@ class DogsController < ApplicationController
     end
     
     def dog_owner
-     unless @dog.owner_id == current_user.id
+     unless @dog.user_id == current_user.id
       flash[:notice] = 'Access denied as you are not the owner of this Dog'
       redirect_to @dog
      end
