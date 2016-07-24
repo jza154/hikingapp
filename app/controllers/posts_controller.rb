@@ -32,7 +32,7 @@ class PostsController < InheritedResources::Base
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @post.user = current_user
+    @post.user_id = current_user.id
     
     respond_to do |format|
       if @post.save
@@ -81,8 +81,8 @@ class PostsController < InheritedResources::Base
     end
     
     def post_owner
-     unless @post.user == current_user
-      flash[:notice] = 'Access denied as you are not owner of this Job'
+     unless @post.user_id == current_user.id
+      flash[:notice] = 'Access denied as you are not the owner of this Post'
       redirect_to post_path
      end
     end

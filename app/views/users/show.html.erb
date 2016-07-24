@@ -9,20 +9,24 @@
 <br/>
 <br/>
 <br/>
+<!--User image-->
 <%= gravatar_for (@user) %>
 <% if current_user.email == @user.email%>
     <a href="http://gravatar.com/emails" target="_blank">Change Profile Picture</a>
 <% end %>
 <br/>
+
+<!--User info-->
 <br/>
 <p><b>Name:</b> <%=@user.first_name%> <%=@user.last_name%></p>
 <% if current_user.email == @user.email%>
     <p><b>Birthday:</b> <%=@user.birthday%> </p> 
     <p><b>Address:</b> <%=@user.address%> </p>
 <% end %>
-<p><b>Dog Breed:</b> <%=@user.dog_breed%> </p>
-<p><b>Dog Weight:</b> <%=@user.dog_weight%> </p>
-<p><b>Dog Age:</b> <%=@user.dog_age%> </p>
+
+<!--<p><b>Dog Breed:</b> < %=@user.dog_breed%> </p>-->
+<!--<p><b>Dog Weight:</b> < %=@user.dog_weight%> </p>-->
+<!--<p><b>Dog Age:</b> < %=@user.dog_age%> </p>-->
 
 <p><b>About:</b> <%=@user.about%> </p>
 
@@ -30,6 +34,45 @@
     <%= link_to 'Edit', edit_user_registration_path(@current_user) %> <br>
 <% end %>
 
-<%= link_to 'Back', users_path %>
+<!--Dog info-->
+<h1>Dogs Owned</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Weight</th>
+      <th>About</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dogs.each do |dog| %>
+        <% if @user.id == dog.owner_id%>
+          <tr>
+            <td><%= dog.name %></td>
+            <td><%= dog.breed %></td>
+            <td><%= dog.age %></td>
+            <td><%= dog.gender %></td>
+            <td><%= dog.weight %></td>
+            <td><%= truncate( dog.about, :length => 20) %></td>
+            <td><%= link_to 'Show', dog %></td>
+            <% if current_user.email == @user.email%>
+                <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
+                <td><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>
+          </tr>
+        <% end %>
+    <% end %>
+  </tbody>
+</table>
+<% if current_user.email == @user.email%>
+    <%= link_to 'New Dog', new_dog_path %>
+<% end %>
+<br>
+<%= link_to 'Back To All Users', users_path %>
 
 </div>

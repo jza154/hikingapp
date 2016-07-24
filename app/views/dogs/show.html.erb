@@ -1,0 +1,40 @@
+<% provide(:title, "Dog Profile") %>
+<br><br>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dog.name %>
+</p>
+
+<p>
+  <strong>Breed:</strong>
+  <%= @dog.breed %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @dog.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @dog.gender %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @dog.weight %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @dog.about %>
+</p>
+
+<% if current_user.id == @dog.owner_id%>
+  <%= link_to 'Edit', edit_dog_path(@dog) %> |
+<% end %>
+<%= link_to 'Owner Profile', user_path(@dog.owner_id) %> |
+<%= link_to 'Show All Dogs', dogs_path %>

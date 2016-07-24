@@ -26,10 +26,11 @@
 
   <tbody>
     <% @posts.each do |pos| %>
+      <% @owner = User.find(pos.user_id) %>
       <tr>
         <td><%= pos.title %></td>
         <td><%= truncate( pos.content, :length => 50) %></td>
-        <td><%= pos.user.first_name %> <%= pos.user.last_name %></td>
+        <td><%= @owner.first_name %> <%= @owner.last_name %></td>
         <td><%= pos.created_at %></td>
         <td><%= link_to 'Show', pos %></td>
       </tr>
