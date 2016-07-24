@@ -1,7 +1,7 @@
 class PostsController < InheritedResources::Base
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  # before_action :post_owner, only: [:edit, :update, :destroy]
+  before_action :post_owner, only: [:edit, :update, :destroy]
   
   # GET /posts
   # GET /posts.json
@@ -32,7 +32,7 @@ class PostsController < InheritedResources::Base
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    # @post.user_id = current_user.id
+    @post.user_id = current_user.id
     
     respond_to do |format|
       if @post.save
