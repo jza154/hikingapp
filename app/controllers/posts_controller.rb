@@ -5,14 +5,31 @@ class PostsController < InheritedResources::Base
   
   # GET /posts
   # GET /posts.json
-  def index
-    @posts = Post.all
-    if params[:search]
-      @posts = Post.search(params[:search]).order("created_at DESC")
-    else
-      @posts = Post.all.order('created_at DESC')
-    end
+  # def index
+  #   @posts = Post.all
+  #   if params[:search]
+  #     @posts = Post.search(params[:search]).order("created_at DESC")
+  #   else
+  #     @posts = Post.all.order('created_at DESC')
+  #   end
+  # end
+  
+  
+    def index
+    @posts = Post.paginate(page: params[:page], per_page:3)
+    # if params[:search]
+    #   @posts = Post.search(params[:search]).order("created_at DESC")
+    # else
+    #   @posts = Post.all.order('created_at DESC')
+    # end
   end
+  
+  
+  
+  
+  
+  
+  
 
   # GET /posts/1
   # GET /posts/1.json

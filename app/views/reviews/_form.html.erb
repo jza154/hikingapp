@@ -13,6 +13,9 @@
 
   <div class="field">
     <div id="star-rating"></div>
+    <% if @review.new %>
+      <div>Your previous review was: <%= @review.rating %></div>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>
