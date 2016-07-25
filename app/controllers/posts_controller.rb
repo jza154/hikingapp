@@ -22,6 +22,7 @@ class PostsController < InheritedResources::Base
     # else
     #   @posts = Post.all.order('created_at DESC')
     # end
+    @posts=Post.search(params[:search])
   end
   
   
