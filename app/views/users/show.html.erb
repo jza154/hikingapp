@@ -15,7 +15,7 @@
       <a href="http://gravatar.com/emails" target="_blank">Change Profile Picture</a>
   <% end %>
   <br/>
-  <!--< %= image_tag @user.image.url(:thumb)%>-->
+  <%= image_tag @user.image.url(:thumb)%>
   <br>
   <!--Average Rating-->
   <div class="star-rating" data-score= <%= @avg_review %> ></div>
@@ -64,7 +64,7 @@
             <li class="list-group-item">Breed: <%= dog.breed %></li>
             <li class="list-group-item">Gender: <%= dog.gender %></li>
             <li class="list-group-item">Weight: <%= dog.weight %></li>
-            <li class="list-group-item">Hobby: <%= truncate( dog.about, :length => 20)  %></li>
+            <li class="list-group-item">About: <%= truncate( dog.about, :length => 20)  %></li>
             <li class="list-group-item">
               <%= link_to 'Show', dog %>
               <% if current_user.email == @user.email%>

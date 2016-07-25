@@ -31,9 +31,9 @@ class UsersController < ApplicationController
     # def user_params
     #   params.require(:user).permit(:first_name, :last_name, :address, :about, :birthday, :dog_breed ,:dog_height, :dog_weight, :dog_weight, :image)
     # end
-    def configure_permitted_parameters
-        devise_parameter_sanitizer.for(:user_update) { |u| u.permit(:first_name, :last_name, :address, :about, :birthday, :dog_breed ,:dog_height, :dog_weight, :dog_weight, :image) }
-    end
+    # def configure_permitted_parameters
+    #     devise_parameter_sanitizer.for(:user_update) { |u| u.permit(:first_name, :last_name, :address, :about, :birthday, :dog_breed ,:dog_height, :dog_weight, :dog_weight, :image) }
+    # end
 
 
   
