@@ -5,7 +5,7 @@
 
 <div class="container">
 
-  <center><h1><b>My Profile<b></h1></center>
+  <center><h1><b><%=@user.first_name%>'s Profile<b></h1></center>
   <br/>
   <br/>
   <br/>
@@ -120,7 +120,6 @@
       <% @reviews.each do |review| %>  
         <% @reviewer = User.find(review.reviewer_id) %>
         <div class="reviews">
-          <!--<p>Rating:< %= review.rating %></p>-->
           <div class="star-rating" data-score = <%= review.rating %>></div>
           <p>By:<%= @reviewer.first_name %><%= @reviewer.last_name %></p>
           <p>Comment:<%= review.comment %></p>

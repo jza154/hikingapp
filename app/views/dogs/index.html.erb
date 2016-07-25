@@ -30,7 +30,7 @@
         <td><%= dog.weight %></td>
         <td><%= dog.user.first_name %> <%= dog.user.last_name %></td>
         <td><%= truncate( dog.about, :length => 20) %></td>
-        <td><%= link_to 'Show', user_dog %></td>
+        <td><%= link_to 'Show', dog_path(dog.id) %></td>
         <!--<td>< %= link_to 'Edit', edit_dog_path(dog) %></td>-->
         <!--<td>< %= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>

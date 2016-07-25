@@ -13,14 +13,18 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    # if Review.id.present? 
-    #   render 'edit' 
-    # end 
-    @review = Review.new
+    if @receiver.id == current_user.id
+      redirect_to @receiver
+      flash[:notice] = "You cannot write a review for yourself." #DID NOT DISPLAY
+    else
+      @review = Review.new
+    end
   end
 
   # GET /reviews/1/edit
   def edit
+    redirect_to @receiver
+    flash[:notice] = "Reviews cannot be edited." #DID NOT DISPLAY
   end
 
   # POST /reviews
@@ -33,7 +37,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to @receiver
     else
-      redirect_to 'new'
+      render 'new'
     end
   end
 
@@ -43,7 +47,7 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
       redirect_to @user
     else
-      redirect_to 'edit'
+      render 'edit'
     end
   end
 

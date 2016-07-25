@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :reviews
   resources :dogs
   resources :posts
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -39,7 +38,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'page#home'
   resources 'users' do
-    resources :reviews, expect: [:index, :show]
+    resources :reviews, expect: [:index, :show, :edit]
+    # resources :reviews, only: [:new, :index], expect: [:index]
   end
 
   # Example of regular route:

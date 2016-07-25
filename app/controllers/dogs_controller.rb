@@ -6,7 +6,8 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
-    @dogs = Dog.all
+    # @dogs = Dog.all
+    redirect_to '/'
   end
 
   # GET /dogs/1
@@ -59,7 +60,7 @@ class DogsController < ApplicationController
   def destroy
     @dog.destroy
     respond_to do |format|
-      format.html { redirect_to dogs_url, notice: 'Dog was successfully destroyed.' }
+      format.html { redirect_to user_path(@dog.user_id), notice: 'Dog was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
