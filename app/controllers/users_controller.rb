@@ -17,16 +17,16 @@ class UsersController < ApplicationController
     @user =User.find(params[:id])
     @dogs = Dog.where(user_id: @user.id).order("created_at DESC")
     
-    @reviews = Review.where(receiver_id: @user.id).order("created_at DESC").paginate(:page => params[:page], per_page: 4)
+    @reviews = Review.where(receiver_id: @user.id).order("created_at DESC").paginate(:page => params[:page], per_page: 2)
     
     if @reviews.blank?
       @avg_review = 0
     else
-      @avg_review = @reviews.average(:rating).round(2)
+      @avg_review = @reviews.average(:rating)#.round(2)
     end
   end
   
-  private
+  # private
     def user_params
       params.require(:user).permit(:first_name, :last_name, :address, :about, :birthday, :dog_breed ,:dog_height, :dog_weight, :dog_weight, :image)
     end

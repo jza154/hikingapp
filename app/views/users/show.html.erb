@@ -15,7 +15,7 @@
       <a href="http://gravatar.com/emails" target="_blank">Change Profile Picture</a>
   <% end %>
   <br/>
-  <%= image_tag user.image.url(:thumb ) %>
+  <%= image_tag @user.image.url(:thumb ) %>
   <br>
   <!--Average Rating-->
   <div class="star-rating" data-score= <%= @avg_review %> ></div>
@@ -121,9 +121,8 @@
   <!--Rating and Review-->
   <div>
     <h1 class="review_title">Reviews</h1>
-    
     <%= will_paginate @reviews %>
-    
+  
     <% if @reviews.blank? %>
       <% if current_user.email != @user.email%>
         <h3>No reviews just yet, would you like to add the first!</h3>
@@ -148,7 +147,7 @@
         <%= link_to 'Write a Review', new_user_review_path(@user) %>
       <% end %>
     <% end %>
-
+  <%= will_paginate @reviews %>
   </div>
   <br>
 
