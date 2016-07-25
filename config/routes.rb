@@ -30,9 +30,7 @@ Rails.application.routes.draw do
   # get 'owners' => 'users#dogowner'
   
     
-  devise_for :users , :controllers => { :registrations => :registrations } do
-    resources :reviews, expect: [:index, :show]
-  end
+  devise_for :users , :controllers => { :registrations => :registrations }
   
   # resources :users
   # The priority is based upon order of creation: first created -> highest priority.
