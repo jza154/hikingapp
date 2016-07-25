@@ -19,7 +19,8 @@
   <br>
   <!--Average Rating-->
   <div class="star-rating" data-score= <%= @avg_review %> ></div>
-  <em><%= "#{@reviews.length} reviews" %></em>
+  <% @user_review = Review.where(receiver_id: @user.id %>
+  <em><%= "#{@user_review.all} reviews" %></em>
   <br>
   
   <!--User info-->
