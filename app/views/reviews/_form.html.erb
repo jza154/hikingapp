@@ -13,8 +13,8 @@
 
   <div class="field">
     <div id="star-rating"></div>
-    <% if @review.new %>
-      <div>Your previous review was: <%= @review.rating %></div>
+    <% if @review.rating != nil %>
+      <div>Your previous rating was: <%= @review.rating %></div>
     <% end %>
   </div>
   <div class="field">
