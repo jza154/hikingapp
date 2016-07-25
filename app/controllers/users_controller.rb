@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user =User.find(params[:id])
     @dogs = Dog.where(user_id: @user.id).order("created_at DESC")
     
-    @reviews = Review.where(receiver_id: @user.id).order("created_at DESC")
+    @reviews = Review.where(receiver_id: @user.id).order("created_at DESC").paginate(:page => params[:page], per_page: 4)
     
     if @reviews.blank?
       @avg_review = 0

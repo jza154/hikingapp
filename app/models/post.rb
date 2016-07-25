@@ -6,7 +6,8 @@ class Post < ActiveRecord::Base
   #  where("content LIKE ?", "%#{search}%")
   #end
     if search
-      find(:all, :conditions => ['Title LIKE ?', "%#{search}%"])
+      #find(:all, :conditions => ['Title LIKE ?', "%#{search}%"])
+      
     else
       find(:all)
     end

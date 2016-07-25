@@ -40,14 +40,19 @@
   <!--  < %= f.number_field :dog_age, min: 0,  autofocus: true %>-->
   <!--</div>-->
 
-     <div class="field">
+  <div class="field">
     <%= f.label :address %><br />
     <%= f.text_field :address, autofocus: true %>
   </div>
   
-     <div class="field">
+  <div class="field">
     <%= f.label :about %><br />
     <%= f.text_field :about, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.file_field :image, autofocus: true %>
   </div>
 
   <div class="field">

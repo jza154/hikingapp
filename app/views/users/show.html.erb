@@ -15,7 +15,8 @@
       <a href="http://gravatar.com/emails" target="_blank">Change Profile Picture</a>
   <% end %>
   <br/>
-  
+  <%= image_tag user.image.url(:thumb ) %>
+  <br>
   <!--Average Rating-->
   <div class="star-rating" data-score= <%= @avg_review %> ></div>
   <em><%= "#{@reviews.length} reviews" %></em>
@@ -112,7 +113,7 @@
   <!--</table>-->
 
   <% if current_user.email == @user.email%>
-      <%= link_to 'New Dog', new_dog_path %>
+        <br><%= link_to 'New Dog', new_dog_path %>
   <% end %>
   <br>
   <%= link_to 'Back To All Users', users_path %>
@@ -120,9 +121,8 @@
   <!--Rating and Review-->
   <div>
     <h1 class="review_title">Reviews</h1>
-    <!--<% if current_user.email != @user.email%>-->
-    <!--  <%= link_to 'Write a Review', new_user_review_path(@user) %>-->
-    <!--<% end %>-->
+    
+    <%= will_paginate @reviews %>
     
     <% if @reviews.blank? %>
       <% if current_user.email != @user.email%>
@@ -132,6 +132,10 @@
         <h3>You have no reviews just yet!</h3>
       <% end %>
     <% else %>
+      <% if current_user.email != @user.email%>
+        <%= link_to 'Write a Review', new_user_review_path(@user) %>
+      <% end %>
+    
       <% @reviews.each do |review| %>  
         <% @reviewer = User.find(review.reviewer_id) %>
         <div class="reviews">
@@ -140,14 +144,14 @@
           <p>Comment:<%= review.comment %></p>
         </div>
       <% end %>
+      <% if current_user.email != @user.email%>
+        <%= link_to 'Write a Review', new_user_review_path(@user) %>
+      <% end %>
     <% end %>
+
   </div>
   <br>
-  
-  <!--<% if current_user.email != @user.email%>-->
-  <!--    <%= link_to 'Write a Review', new_user_review_path(@user) %>-->
-  <!--<% end %>-->
-  <!--<br>-->
+
   
   
   <%= link_to 'Back To All Users', users_path %>
