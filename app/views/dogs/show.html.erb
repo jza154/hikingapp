@@ -30,8 +30,8 @@
 
 <p>
   <strong>Owner:</strong>
-  <% @user = User.find(@dog.user_id) %>
-  <%= @user.first_name %> <%= @user.last_name %>
+  <!--< % @user = User.find(@dog.user_id) %>-->
+  <%= @dog.user.first_name %> <%= @dog.user.last_name %>
 </p>
 
 <p>
@@ -40,7 +40,7 @@
 </p>
 
 <% if current_user.id == @dog.user_id%>
-  <%= link_to 'Edit', edit_dog_path(@dog) %> |
+  <%= link_to 'Add Dogs', new_dog_path %> |
+  <%= link_to 'Edit This Dog', edit_dog_path(@dog) %> |
 <% end %>
 <%= link_to 'Owner Profile', user_path(@dog.user_id) %> |
-<%= link_to 'Show All Dogs', dogs_path %>

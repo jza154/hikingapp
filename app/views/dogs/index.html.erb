@@ -21,16 +21,16 @@
 
   <tbody>
     <% @dogs.each do |dog| %>
-      <% @user = User.find(dog.user_id) %>
+      <!--< % @user = User.find(dog.user_id) %>-->
       <tr>
         <td><%= dog.name %></td>
         <td><%= dog.breed %></td>
         <td><%= dog.age %></td>
         <td><%= dog.gender %></td>
         <td><%= dog.weight %></td>
-        <td><%= @user.first_name %> <%= @user.last_name %></td>
+        <td><%= dog.user.first_name %> <%= dog.user.last_name %></td>
         <td><%= truncate( dog.about, :length => 20) %></td>
-        <td><%= link_to 'Show', dog %></td>
+        <td><%= link_to 'Show', user_dog %></td>
         <!--<td>< %= link_to 'Edit', edit_dog_path(dog) %></td>-->
         <!--<td>< %= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
