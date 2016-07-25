@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @dogs = Dog.where(user_id: @user.id).order("created_at DESC")
     
     @reviews = Review.where(receiver_id: @user.id).order("created_at DESC").paginate(:page => params[:page], per_page: 2)
+    @user_review = Review.where(receiver_id: @user.id)
     
     if @reviews.blank?
       @avg_review = 0
@@ -27,8 +28,11 @@ class UsersController < ApplicationController
   end
   
   # private
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :address, :about, :birthday, :dog_breed ,:dog_height, :dog_weight, :dog_weight, :image)
+    # def user_params
+    #   params.require(:user).permit(:first_name, :last_name, :address, :about, :birthday, :dog_breed ,:dog_height, :dog_weight, :dog_weight, :image)
+    # end
+    def configure_permitted_parameters
+        devise_parameter_sanitizer.for(:user_update) { |u| u.permit(:first_name, :last_name, :address, :about, :birthday, :dog_breed ,:dog_height, :dog_weight, :dog_weight, :image) }
     end
 
 

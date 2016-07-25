@@ -15,12 +15,11 @@
       <a href="http://gravatar.com/emails" target="_blank">Change Profile Picture</a>
   <% end %>
   <br/>
-  <%= image_tag @user.image.url(:thumb ) %>
+  <!--< %= image_tag @user.image.url(:thumb)%>-->
   <br>
   <!--Average Rating-->
   <div class="star-rating" data-score= <%= @avg_review %> ></div>
-  <% @user_review = Review.where(receiver_id: @user.id %>
-  <em><%= "#{@user_review.all} reviews" %></em>
+  <em><%= "#{@user_review.length} reviews" %></em>
   <br>
   
   <!--User info-->
@@ -43,9 +42,6 @@
   
   <!--Dog info-->
   <h1>Dogs Owned</h1>
-  <% if current_user.email == @user.email%>
-      <%= link_to 'New Dog', new_dog_path %>
-  <% end %>
   
   <!--version 1-->
   <div class="col-md-12">
@@ -64,11 +60,11 @@
           </div>
           <%= image_tag dog.dog_image.url(:thumb ) %>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Age:<%= dog.age %></li>
-            <li class="list-group-item">Breed:<%= dog.breed %></li>
-            <li class="list-group-item">Gender:<%= dog.gender %></li>
-            <li class="list-group-item">Weight:<%= dog.weight %></li>
-            <li class="list-group-item">Hobby:<%= truncate( dog.about, :length => 20)  %></li>
+            <li class="list-group-item">Age: <%= dog.age %></li>
+            <li class="list-group-item">Breed: <%= dog.breed %></li>
+            <li class="list-group-item">Gender: <%= dog.gender %></li>
+            <li class="list-group-item">Weight: <%= dog.weight %></li>
+            <li class="list-group-item">Hobby: <%= truncate( dog.about, :length => 20)  %></li>
             <li class="list-group-item">
               <%= link_to 'Show', dog %>
               <% if current_user.email == @user.email%>
