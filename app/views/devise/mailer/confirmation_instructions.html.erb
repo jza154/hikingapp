@@ -1,8 +1,8 @@
 <% provide(:title, "Confirm Account") %>
 
-<br />
+<section class="page">
 <div class="container">
-<br />
+<div class="row">
 
 <p>Welcome <%= @email %>!</p>
 
@@ -11,3 +11,5 @@
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
 
 </div>
+</div>
+</section>

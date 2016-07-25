@@ -1,12 +1,10 @@
 <% provide(:title, "User Profile") %>
 
-<br/>
-<br/>
-
+<section class="page">
 <div class="container">
+<div class="row">
 
-  <center><h1><b><%=@user.first_name%>'s Profile<b></h1></center>
-  <br/>
+  <center><h1><b><%=@user.first_name%>'s Profile</b></h1></center>
   <br/>
   <br/>
   <!--User image-->
@@ -40,6 +38,9 @@
       <%= link_to 'Edit', edit_user_registration_path(@current_user) %> <br>
   <% end %>
   
+  
+  
+  
   <!--Dog info-->
   <h1>Dogs Owned</h1>
   
@@ -60,11 +61,11 @@
           </div>
           <%= image_tag dog.dog_image.url(:thumb ) %>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Age: <%= dog.age %></li>
-            <li class="list-group-item">Breed: <%= dog.breed %></li>
-            <li class="list-group-item">Gender: <%= dog.gender %></li>
-            <li class="list-group-item">Weight: <%= dog.weight %></li>
-            <li class="list-group-item">About: <%= truncate( dog.about, :length => 20)  %></li>
+            <li class="list-group-item"><b>Age</b>: <%= dog.age %></li>
+            <li class="list-group-item"><b>Breed</b>: <%= dog.breed %></li>
+            <li class="list-group-item"><b>Gender</b>: <%= dog.gender %></li>
+            <li class="list-group-item"><b>Weight</b>: <%= dog.weight %></li>
+            <li class="list-group-item"><b>About</b>: <%= truncate( dog.about, :length => 20)  %></li>
             <li class="list-group-item">
               <%= link_to 'Show', dog %>
               <% if current_user.email == @user.email%>
@@ -115,6 +116,10 @@
   <br>
   <%= link_to 'Back To All Users', users_path %>
 
+
+
+
+
   <!--Rating and Review-->
   <div>
     <h1 class="review_title">Reviews</h1>
@@ -122,10 +127,10 @@
   
     <% if @reviews.blank? %>
       <% if current_user.email != @user.email%>
-        <h3>No reviews just yet, would you like to add the first?</h3>
+        <h3>No reviews yet, would you like to add the first?</h3>
         <%= link_to 'Write a Review', new_user_review_path(@user) %>
       <% else %>
-        <h3>You have no reviews just yet!</h3>
+        <h3>You have no reviews yet!</h3>
       <% end %>
     <% else %>
       <% if current_user.email != @user.email%>
@@ -152,7 +157,7 @@
   
   <%= link_to 'Back To All Users', users_path %>
   
-</div>
+
 
 <script>
     $('.star-rating').raty({
@@ -163,3 +168,7 @@
     }
   });
 </script>
+
+</div>
+</div>
+</section>

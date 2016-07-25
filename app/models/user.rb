@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          
-  has_attached_file :image, styles: { medium: "150x150>", thumb: "50x50>" }, default_url: ":style/paw.png"
+  has_attached_file :image, styles: { medium: "150x150>", thumb: "50x50>" }, default_url: ":style/thumb_paw.png"
                     # :url  => "/assets/users/image/:style/:id.:extension",
                     # :path => ":rails_root/public/assets/users/image/:style/:id.:extension"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/

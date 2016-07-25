@@ -12,8 +12,8 @@ class Post < ActiveRecord::Base
     #  find(:all)
     #end
   #end
-  searchable do
-    text :title, :content
-  end
+#   searchable do
+#     text :title, :content
+#   end
 end
 
