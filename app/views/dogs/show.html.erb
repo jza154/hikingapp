@@ -4,6 +4,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag @dog.dog_image.url(:medium ) %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @dog.name %>
 </p>

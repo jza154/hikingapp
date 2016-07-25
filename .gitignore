@@ -15,3 +15,5 @@
 /log/*
 !/log/.keep
 /tmp
+
+/public/system/dogs/dog_images 

@@ -52,6 +52,7 @@
         <div class="card-block">
           <h4 class="card-title"><%= dog.name %></h4>
         </div>
+        <%= image_tag dog.dog_image.url(:thumb ) %>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Age:<%= dog.age %></li>
           <li class="list-group-item">Breed:<%= dog.breed %></li>

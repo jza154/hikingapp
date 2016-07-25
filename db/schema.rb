@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725023849) do
+ActiveRecord::Schema.define(version: 20160725071718) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -63,9 +63,13 @@ ActiveRecord::Schema.define(version: 20160725023849) do
     t.string   "gender"
     t.float    "weight"
     t.text     "about"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "user_id"
+    t.string   "dog_image_file_name"
+    t.string   "dog_image_content_type"
+    t.integer  "dog_image_file_size"
+    t.datetime "dog_image_updated_at"
   end
 
   add_index "dogs", ["user_id"], name: "index_dogs_on_user_id"
