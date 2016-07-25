@@ -27,10 +27,12 @@ Primary style
   opacity: 1;
 }
 
+/* -------------------------------- 
 
 xslide 
 
 -------------------------------- */
+
 .cd-headline.slide span {
   display: inline-block;
   padding: .2em 0;

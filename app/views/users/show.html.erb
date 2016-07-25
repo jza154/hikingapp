@@ -10,12 +10,12 @@
   <br/>
   <br/>
   <!--User image-->
-  <%= gravatar_for (@user) %>
-  <% if current_user.email == @user.email%>
-      <a href="http://gravatar.com/emails" target="_blank">Change Profile Picture</a>
-  <% end %>
-  <br/>
-  <%= image_tag @user.image.url(:thumb)%>
+  <!--< %= gravatar_for (@user) %>-->
+  <!--< % if current_user.email == @user.email%>-->
+  <!--    <a href="http://gravatar.com/emails" target="_blank">Change Profile Picture</a>-->
+  <!--< % end %>-->
+  <!--<br/>-->
+  <%= image_tag @user.image.url(:medium)%>
   <br>
   <!--Average Rating-->
   <div class="star-rating" data-score= <%= @avg_review %> ></div>
@@ -122,7 +122,7 @@
   
     <% if @reviews.blank? %>
       <% if current_user.email != @user.email%>
-        <h3>No reviews just yet, would you like to add the first!</h3>
+        <h3>No reviews just yet, would you like to add the first?</h3>
         <%= link_to 'Write a Review', new_user_review_path(@user) %>
       <% else %>
         <h3>You have no reviews just yet!</h3>
@@ -136,8 +136,8 @@
         <% @reviewer = User.find(review.reviewer_id) %>
         <div class="reviews">
           <div class="star-rating" data-score = <%= review.rating %>></div>
-          <p>By:<%= @reviewer.first_name %> <%= @reviewer.last_name %></p>
-          <p>Comment:<%= review.comment %></p>
+          <p>By: <%= @reviewer.first_name %> <%= @reviewer.last_name %></p>
+          <p>Comment: <%= review.comment %></p>
         </div>
       <% end %>
       <% if current_user.email != @user.email%>
