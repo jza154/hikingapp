@@ -16,6 +16,9 @@ class ReviewsController < ApplicationController
     if @receiver.id == current_user.id
       redirect_to @receiver
       flash[:notice] = "You cannot write a review for yourself." #DID NOT DISPLAY
+    elsif Review.where(reviewer_id: current_user.id, receiver_id: @receiver.id).any?
+      @reviewed = Review.where(reviewer_id: current_user.id, receiver_id: @receiver.id)
+      redirect_to edit_user_review_path(@receiver.id, @reviewed.ids)
     else
       @review = Review.new
     end
@@ -23,8 +26,6 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
-    redirect_to @receiver
-    flash[:notice] = "Reviews cannot be edited." #DID NOT DISPLAY
   end
 
   # POST /reviews
@@ -45,7 +46,7 @@ class ReviewsController < ApplicationController
   # PATCH/PUT /reviews/1.json
   def update
     if @review.update(review_params)
-      redirect_to @user
+      redirect_to @receiver
     else
       render 'edit'
     end
@@ -54,7 +55,8 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1
   # DELETE /reviews/1.json
   def destroy
-    @review.destroy
+    @review = Review.find(params[:id])
+    @user_review.destroy
     respond_to do |format|
       format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
       format.json { head :no_content }

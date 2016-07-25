@@ -6,4 +6,6 @@
 
 <%= render 'form' %>
 
-<!--< %= link_to 'Cancel', user_path(@recveiver.id) %>-->
+<%= link_to 'Cancel', user_path(@review.receiver_id) %> |
+<%= link_to 'Delete', user_path(@review.receiver_id), :confirm => "'Are you sure?", :method => :delete  %>
+<!--< %= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' } %>-->
