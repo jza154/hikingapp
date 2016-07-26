@@ -135,7 +135,8 @@
       <% @reviews.each do |review| %>  
         <% @reviewer = User.find(review.reviewer_id) %>
         <div class="reviews">
-          <div class="star-rating" data-score = <%= review.rating %>></div>
+          <!--<div class="star-rating" data-score = <%= review.rating %>></div>-->
+          <%= review.rating %>
           <p>By: <%= @reviewer.first_name %> <%= @reviewer.last_name %></p>
           <p>Comment: <%= review.comment %></p>
         </div>
@@ -156,9 +157,9 @@
 
 <script>
     $('.star-rating').raty({
-      starOn: '<%= image_path('star-on.png') %>',
-      starHalf: '<%= image_path('star-half.png') %>',
-      starOff: '<%= image_path('star-off.png') %>',
+      // starOn: '< %= image_path('star-on.png') %>',
+      // starHalf: '< %= image_path('star-half.png') %>',
+      // starOff: '< %= image_path('star-off.png') %>',
       path: '/assets/',
       readOnly: true,
       score: function() {

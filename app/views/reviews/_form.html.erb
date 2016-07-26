@@ -12,9 +12,9 @@
   <% end %>
 
   <div class="field">
-    <div id="star-rating"></div>
+    <!--<div id="star-rating"></div>-->
     <%= f.label :rating %><br>
-    <%= f.number_area :rating %>
+    <%= f.number_field :rating %>
     <% if @review.rating != nil %>
       <div>Your previous rating was: <%= @review.rating %></div>
     <% end %>
