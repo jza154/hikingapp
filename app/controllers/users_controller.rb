@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   end
   
-
+# Efe"
   def show
     @user =User.find(params[:id])
     @dogs = Dog.where(user_id: @user.id).order("created_at DESC")
