@@ -57,10 +57,10 @@
 
 <script>
     $('.star-rating').raty({
-      starOn: '<%= asset_path('star-on.png') %>',
-      starHalf: '<%= asset_path('star-half.png') %>',
-      starOff: '<%= asset_path('star-off.png') %>',
-      path: '/assets/',
+    //   starOn: '< %= asset_path('star-on.png') %>',
+    //   starHalf: '< %= asset_path('star-half.png') %>',
+    //   starOff: '< %= asset_path('star-off.png') %>',
+      path: '/assets',
       readOnly: true,
       score: function() {
             return $(this).attr('data-score');
