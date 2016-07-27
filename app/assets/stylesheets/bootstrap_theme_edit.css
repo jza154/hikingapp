@@ -16,7 +16,9 @@ section h3.section-subheading-agency {
   padding: 100px 0 25px 0;
 }
 
-
+input#search {
+  width: 250px;
+}
 
 
 #pass-field {

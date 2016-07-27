@@ -8,6 +8,13 @@
 
 <%= will_paginate %>
 
+<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<br />
+
 <table>
   <thead>
     <tr>
@@ -19,13 +26,6 @@
     </tr>
   </thead>
   
-  <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-    <%= submit_tag "Search" %>
-  <% end %>
-
-<br /><br />
-
   <tbody>
     <% @posts.each do |pos| %>
       <% @owner = User.find(pos.user_id) %>
