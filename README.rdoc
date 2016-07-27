@@ -8,8 +8,8 @@ https://afternoon-refuge-86211.herokuapp.com/
 Admin access:
 https://doggie-walk-jza154.c9users.io/admin (cloud9)
 https://afternoon-refuge-86211.herokuapp.com/admin (heroku)
-login: admin@sfu.ca
-password: 123456
+login: admin@example.com
+password: password
 
 To do:
 https://trello.com/b/Ke4GoTyx/proj
