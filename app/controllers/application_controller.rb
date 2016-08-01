@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
   
   helper_method :mailbox, :conversation
   
+  def default_url_options
+    if Rails.env.production?
+      {:host => "afternoon-refuge-86211.herokuapp.com"}
+    else  
+      {:host => "doggie-walk-jza154.c9users.io"}
+    end
+  end 
+  
   private
 
   def mailbox

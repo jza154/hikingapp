@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  default_url_options :host => "doggie-walk-jza154.c9users.io"
+  
+  # default_url_options :host => "doggie-walk-jza154.c9users.io"
   
   resources :events
   resources :dogs

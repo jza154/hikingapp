@@ -10,7 +10,7 @@
 
 <%= will_paginate %>
 
-    
+    <!-- gEOCODER-->
 <%= form_tag users_path, method: :get do %>
   <%= label :location, "Search users near : " %>
   <%= text_field_tag :location, params[:location] %>
@@ -24,7 +24,7 @@
 <!-- Display Users -->
 <section id="users">
 <% @users.each do |user| %>
-
+    
     <%= link_to user_path(user) do %> 
     <div id="user-one">
       

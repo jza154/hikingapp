@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @users=User.all
     if params[:location].present?
-      @users = User.near(params[:location], params[:distance] || 1, order: :distance)
+      @users = User.near(params[:location], params[:distance] || 10, order: :distance)
     else
       @users = User.all
     end
@@ -18,8 +18,9 @@ class UsersController < ApplicationController
     # end
   end
   
+
   
-# Efe"
+
   def show
   # if params[:search].present?
   #   @locations = Location.near(params[:search], 50, :order => :distance)
