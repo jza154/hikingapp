@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
    if search
     
     
-     self.where("Content || Title LIKE ?", "%#{search}%")
+     self.where("Content || Title  LIKE ?", "%#{search}%")
   # self.where("user_id like ? , %#{search}%")
   else
     self.all
