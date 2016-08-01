@@ -14,24 +14,25 @@ class PostsController < InheritedResources::Base
   #   end
   # end
   
-  
-    def index
-    @posts = Post.paginate(page: params[:page], per_page:3)
+
+  def index
+    # criteria = params[:search]
+    # @posts = Post.where('text LIKE ?', "%#{criteria}%")
     # if params[:search]
     #   @posts = Post.search(params[:search]).order("created_at DESC")
     # else
     #   @posts = Post.all.order('created_at DESC')
     # end
-   # @posts=Post.search(params[:search])
+    # @posts=Post.search(params[:search])
+    @posts = Post.paginate(page: params[:page], per_page:3)
+      @posts = Post.all
+     if params[:search]
+       @posts = Post.search(params[:search]).order("created_at DESC")
+     else
+       @posts = Post.all.order('created_at DESC')
+     end
   end
   
-  
-  
-  
-  
-  
-  
-
   # GET /posts/1
   # GET /posts/1.json
   def show
@@ -104,4 +105,4 @@ class PostsController < InheritedResources::Base
       redirect_to post_path
      end
     end
-end
+end# # s# # s# 

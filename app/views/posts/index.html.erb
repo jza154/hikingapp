@@ -6,11 +6,12 @@
 
 <h1>Community Bulletin Board</h1>
 
-<%= will_paginate %>
-
-<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-  <%= submit_tag "Search" %>
+<!--Search-->
+<%= form_tag posts_path, :method => :get do %>
+<p>
+  <%=text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :title => nil %>
+</p>
 <% end %>
 
 <br />
@@ -44,7 +45,7 @@
 
 <%= link_to 'New Post', new_post_path %>
 
-<%= will_paginate %>
+
 
 </div>
 </div>

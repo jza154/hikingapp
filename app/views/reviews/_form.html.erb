@@ -18,7 +18,7 @@
     <!--< %= f.label :rating %><br>-->
     <!--< %= f.number_field :rating %>-->
     <% if @review.rating != nil %>
-      <div>Your previous rating was: <%= @review.rating %></div>
+      <div>Youa are now editing your previous rating for <%= @receiver.first_name %>, your previous rating was: <%= @review.rating %></div>
     <% end %>
   </div>
   <div class="field">
@@ -34,6 +34,6 @@
 <script>
   $('#star-rating').raty({
     path: '/assets/',
-    scoreName: 'review[rating]'
+    scoreName: 'review[rating]',
   });
 </script>

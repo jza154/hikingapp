@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  default_url_options :host => "doggie-walk-jza154.c9users.io"
+  
   resources :events
   resources :dogs
   resources :posts
@@ -8,10 +10,6 @@ Rails.application.routes.draw do
 
   get 'search' => 'page#search'
 
-  # get 'page/about'
-
-  # get 'page/contact'
-  
   get 'privacy'=>'page#privacy'
   get 'terms'=>'page#terms'
   
@@ -24,12 +22,6 @@ Rails.application.routes.draw do
 
   get 'users' => 'users#index'
   
-  # as :user do
-  #   get 'users/:id', :to => 'devise/registrations#edit', :as => :user_root
-  # end
-  # get 'owners' => 'users#dogowner'
-  
-    
   devise_for :users , :controllers => { :registrations => :registrations }
   
   # resources :users
@@ -41,6 +33,18 @@ Rails.application.routes.draw do
   resources 'users' do
     resources :reviews, expect: [:index, :show]
     # resources :reviews, only: [:new, :index], expect: [:index]
+  end
+    
+  get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
+  get 'mailbox/sentbox' => 'mailbox#sentbox', as: :mailbox_sentbox
+  get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
+  
+  resources :conversations do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
   end
 
 end

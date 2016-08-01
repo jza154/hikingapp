@@ -1,17 +1,3 @@
-section h2.section-heading0-agency {
-  font-size: 40px;
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-section h3.section-subheading-agency {
-  font-size: 16px;
-  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: none;
-  font-style: italic;
-  font-weight: 400;
-  margin-bottom: 75px;
-}
-
 .page {
   padding: 100px 0 25px 0;
 }
@@ -20,6 +6,39 @@ input#search {
   width: 250px;
 }
 
+input#distance, input#location{
+  width: 250px;
+}
+
+
+/* USER DISPLAY */
+
+#users {
+    padding: 1.5em 3em 3em 3em;
+    text-align: center;
+}
+
+#user-one {
+    padding: 1.5em;
+    display: inline-block;
+    text-align: center;
+}
+
+#users a,
+#user-one a {
+    text-decoration: none;
+    color: black;
+}
+
+#user-one:hover{
+    background-color: #DDD;
+}
+
+#user-name {
+  padding-top: 5px;
+}
+
+/* login related */
 
 #pass-field {
   padding-top: 1em;
@@ -39,13 +58,27 @@ input#search {
   padding: 1em;
 }
 
+/* copied */
 
+section h2.section-heading0-agency {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+section h3.section-subheading-agency {
+  font-size: 16px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+  margin-bottom: 75px;
+}
+
+/* CSS TIMELINE FOR HOMGEPAGE */
 
 #h4-step-text {
   color: black;
 }
-
-
 
 .timeline {
   list-style: none;

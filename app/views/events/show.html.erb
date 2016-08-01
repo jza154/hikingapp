@@ -24,7 +24,11 @@
   <%= @event.location %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
+
+</br>
+</br>
+
 <%= link_to 'Back', events_path %>
 
 </div>

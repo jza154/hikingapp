@@ -2,18 +2,31 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @users = User.paginate(page: params[:page], per_page: 10)
-   
+    @users=User.all
+    if params[:location].present?
+      @users = User.near(params[:location], params[:distance] || 1, order: :distance)
+    else
+      @users = User.all
+    end
+    
+    @users = User.paginate(page: params[:page], per_page: 50)
+    
     # if params[:search]
     #   @user = User.search(params[:search]).order("created_at DESC")
     # else
     #   @users = User.all.order('created_at DESC')
     # end
-
   end
+  
   
 # Efe"
   def show
+  # if params[:search].present?
+  #   @locations = Location.near(params[:search], 50, :order => :distance)
+  # else
+  #   @locations = Location.all
+  # end
+
     @user =User.find(params[:id])
     @dogs = Dog.where(user_id: @user.id).order("created_at DESC")
     
@@ -27,7 +40,6 @@ class UsersController < ApplicationController
     end
   end
   
-end
 
 
   # create_table "users", force: :cascade do |t|
@@ -54,3 +66,4 @@ end
   #   t.text     "about"
   #   t.string   "Image"
   # end
+end

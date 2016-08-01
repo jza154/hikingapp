@@ -21,7 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :age %><br>
-    <%= f.number_field :age, :step => 'any' %>
+    <% if @dog.age != nil %>
+      <%= f.number_field :age, :step => 'any' %>
+    <% else %>
+      <%= f.number_field :age, :step => 'any', value: '0' %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :gender %><br>
@@ -29,7 +33,11 @@
   </div>
   <div class="field">
     <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
+    <% if @dog.weight == nil %>
+      <%= f.text_field :weight,  value: '0' %>
+    <% else %>
+      <%= f.text_field :weight %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :about %><br>
