@@ -24,6 +24,6 @@ class Dog < ActiveRecord::Base
     has_attached_file :dog_image, styles: { medium: "400x320#", thumb: "200x160#" }, default_url: ":style/paw.png" #default_url: "paw.png" 
     validates_attachment_content_type :dog_image, content_type: /\Aimage\/.*\Z/
     
-    validates :age, :weight, numericality: { greater_than_or_equal_to: 0,  only_integer: true }
+    validates :age, :weight, numericality: { greater_than_or_equal_to: 0 }
     validates :age, numericality: { less_than_or_equal_to: 30,  only_integer: true }
 end
