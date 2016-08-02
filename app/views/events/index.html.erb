@@ -1,14 +1,11 @@
 <% provide(:title, "Calendar") %>
 
-<!--<section class="page">-->
-<!--<div class="container">-->
-<!--<div class="row">-->
-
-<br /><br /><br /><br /><br /><br />
-
+<section class="page">
 <div class="container">
 
 <h1>Listing Events</h1>
+
+
 
 <div id="events">
   <h2 id="month"> 
@@ -30,7 +27,9 @@
   
 </div>
 
-<p><%=link_to "New Event", new_event_path %> <p>
+<div class="field">
+  <%=link_to "New Event", new_event_path, :class=>"a-btn" %>
+</div>
 
 <!--<table>-->
 <!--  <thead>-->
@@ -63,6 +62,4 @@
 <!--<%= link_to 'New Event', new_event_path %>-->
 
 </div>
-<!--</div>-->
-<!--</section>-->
-<!--</div>-->
+</section>

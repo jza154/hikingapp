@@ -24,19 +24,35 @@
     <%= f.label :birthday %><br />
     <%= f.date_select :birthday, start_year: 1950, end_year: 2020, autofocus: true  %>
   </div>
+  
+  <div class="field" id="tick-box-div">
+    <div id="tick-box-c">
+      <%= f.check_box :owner, value: "false" , autofocus: true %>
+    </div>
+    <div id="tick-box-r">
+      <%= f.label :owner, "Dog Owner" %>
+    </div>
+    
+    <div id="tick-box-c">
+      <%= f.check_box :walker, value: "false" , autofocus: true %>
+    </div>
+    <div id="tick-box-r">
+      <%= f.label :walker, "Dog Walker" %>
+    </div>
+  </div>
 
-  <div class="field">
+  <div>
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
   
-    <div class="field">
+  <div class="field">
     <%= f.label :address%><br />
     <%= f.text_field :address, value: "8888 University Drive, Burnaby, BC" , autofocus: true %>
   </div>
   
 
-  <div class="field" id="pass-field">
+  <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -44,21 +60,25 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field" id="pass-field">
+  <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  
+  <div class="spacer" style="padding:1em;"></div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <%= f.submit "Sign up", :class=>"btn-send" %>
 <% end %>
 
 <br />
-
-<%= render "devise/shared/links" %>
-
 </div>
+
+<div class="col-md-6 text-center wow fadeInDown" id="right-side-center">
+  Already have an account? <br />
+  <%= render "devise/shared/links" %>
+</div>
+
+
 </div>
 </div>
 </section>

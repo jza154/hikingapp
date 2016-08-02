@@ -1,66 +1,289 @@
 .page {
-  padding: 100px 0 25px 0;
+  padding: 100px 0 100px 0;
 }
 
-input#search {
-  width: 250px;
+#search, #distance, #location{
+  width: 300px;
 }
 
-input#distance, input#location{
-  width: 250px;
+
+/* user and dog profile */
+#user-type-profile{
+  margin-top: -10px;
+  font-style: italic;
+}
+#dog_gender {
+  height: 40px;
+  width: 100%;
 }
 
+/* events, calendar, post stuff */
+
+#event-det, #post-det {
+  margin-left: 2em;
+}
+
+h1.post-title {
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-top: 2em;
+}
+
+.show-post-content {
+  font-size: 2em;
+  margin: 1em 0em;
+}
+
+#post-meta {
+  font-style: italic;
+  font-size: 10px;
+}
+
+#post-btn-margin-top {
+  margin-top: 4em;
+}
+
+
+/* posts (bulletin) table */
+
+.bulletin {
+  /*height: 200px;*/
+  margin: 1em 5em;
+  padding-left: 2em   ;
+}
+.bulletin:hover {
+  background: #ddd;
+}
+#bulletin-page a, .bulletin a {
+  text-decoration: none;
+  color: black;
+}
+.content-box-left, .content-box-right {
+  display: inline-block;
+}
+.content-box-left, .content-box-right {
+  /*height: 200px;*/
+  padding: 10px 0px;
+}
+.content-box-left .user-box-frame {
+  /*height: 170px;*/
+}
+.user-box-img{
+  height: 120px;
+  width: 120px;
+  display: inline-block;
+  position: relative;
+}
+.content-box-left .user-box-name {
+  height: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.content-box-right {
+  position: relative;
+  vertical-align: top;
+  margin-left: 20px;
+}
+.content-box-right .content-title {
+  color: #337ab7;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-top: -10px;
+}
+.meta-content {
+  background-color: #337ab7;
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
+.post-content {
+  margin-top: 1em;
+  max-width: 630px;
+}
+
+/* new posts and events */
+
+.back-btn {
+  line-height: 65px;
+}
+
+/* input fields and buttons customization */
+
+input, .a-btn {
+  height: 40px;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.428571429;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  color: black;
+  text-shadow: none;
+  font-weight: none;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  border-radius: 1px;
+  border: 1px solid rgba(111, 121, 122, 0.3);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+input[type="submit"] {
+  background: #414141;
+  color: white;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  height: 40px;
+  text-shadow: none;
+  font-weight: none;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  border-radius: 1px;
+  border: 1px solid rgba(111, 121, 122, 0.3);
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+input[type="submit"]:hover {
+  background: black;
+}
+
+input[type="submit"]:active {
+  background: #414141;
+}
+
+.a-btn {
+  text-decoration: none;
+  line-height: 40px;
+  margin-top: 1em;
+  padding: 1em;
+}
+.a-btn:hover {
+  text-decoration: none;
+  color: black;
+  background-color: #ddd;
+}
+
+select {
+  padding: 6px 12px;
+}
+
+/* mailbox & paginate */
+
+a.btn {
+  text-decoration: none;
+  color: white;
+}
+.spacer {
+  height: 15px;
+}
+.nav > li > a {
+  text-decoration: none;
+}
+.section > div, .panel > div {
+  padding: 15px 15px 15px 15px;
+}
+.comp-btn{
+  height: 71px;
+  line-height: 71px;
+  vertical-align: middle;
+}
+
+.pag-spec {
+  margin: 0px;
+  padding: 0px;
+}
+#pag-input-inline {
+  height: 79px;
+  line-height: 79px;
+  vertical-align: middle;
+}
+.search {
+  color: white;
+  vertical-align: middle;
+  height: 79px;
+  line-height: normal;
+}
 
 /* USER DISPLAY */
 
 #users {
-    padding: 1.5em 3em 3em 3em;
-    text-align: center;
+  padding: 1.5em 3em 3em 3em;
+  text-align: center;
 }
-
 #user-one {
-    padding: 1.5em;
-    display: inline-block;
-    text-align: center;
+  padding: 1.5em;
+  display: inline-block;
+  text-align: center;
 }
-
 #users a,
 #user-one a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
-
 #user-one:hover{
-    background-color: #DDD;
+  background-color: #DDD;
 }
-
-#user-pic {
-  height: 150px;
-  width: 150px;
-}
-
 #user-name {
   padding-top: 5px;
 }
+  /* https://jsbin.com/lidebapomi/edit?html,css,output */
+  #user-pic {
+    height: 150px;
+    width: 150px;
+    display: inline-block;
+    position: relative;
+  }
+  #user-pic img, .user-box-img img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+  }
 
-/* login related */
 
-#pass-field {
+/* login and signup related */
+.field {
   padding-top: 1em;
 }
 
-.actions {
-  padding-top: 1em;
-  margin: 0;
+form .buttons, form .actions {
+  margin-top: 15px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
-#remember-box-div {
+#tick-box-div {
   display: flex;
   padding-top: 1em;
 }
 
-#remember-box-r {
+#tick-box-r {
   padding: 1em;
+}
+
+#right-side-center {
+  padding-top: 200px;
 }
 
 /* copied */

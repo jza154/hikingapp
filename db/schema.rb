@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801214108) do
+ActiveRecord::Schema.define(version: 20160802194839) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -83,7 +83,11 @@ ActiveRecord::Schema.define(version: 20160801214108) do
     t.datetime "updated_at", null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.time     "time"
+    t.integer  "user_id"
   end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
@@ -176,10 +180,6 @@ ActiveRecord::Schema.define(version: 20160801214108) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birthday"
-    t.string   "dog_breed"
-    t.integer  "dog_height"
-    t.integer  "dog_weight"
-    t.integer  "dog_age"
     t.text     "address"
     t.text     "about"
     t.string   "image_file_name"
@@ -188,6 +188,8 @@ ActiveRecord::Schema.define(version: 20160801214108) do
     t.datetime "image_updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "owner"
+    t.boolean  "walker"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

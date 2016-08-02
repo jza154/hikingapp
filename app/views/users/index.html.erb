@@ -7,37 +7,38 @@
 
 <h1>User Directory</h1>
 
-
-<%= will_paginate %>
-
-    <!-- gEOCODER-->
-<%= form_tag users_path, method: :get do %>
-  <%= label :location, "Search users near : " %>
-  <%= text_field_tag :location, params[:location] %>
-
-  <%= label :distance, "Distance : " %>
-  <%= text_field_tag :distance, params[:distance] %>
-
-  <%= submit_tag "Search" %>
-<% end %>
+<div class="row">
+    <div class="col-md-6" id="pag-input-inline">
+        <!-- GEOCODER-->
+        <%= form_tag users_path, :method => :get do %>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search Near", :name => nil, :class=>'search' %>
+        <% end %>
+    </div>
     
+    <div class="col-md-6 text-right">
+    <%= will_paginate @users, :class=>'pag-spec' %>
+    </div>
+</div>
+
 <!-- Display Users -->
 <section id="users">
 <% @users.each do |user| %>
-    
+
     <%= link_to user_path(user) do %> 
     <div id="user-one">
       
         <div id="user-pic">
-        <%= image_tag user.image.url(:medium)%>
+            <%= image_tag user.image.url(:medium) %>
         </div>
         
         <div id="user-name">
-        <% if user.first_name.blank? %> &nbsp;
-        <% else %> <%= user.first_name %> <%= user.last_name %>
-        <% end %>
+            <% if user.first_name.blank? %> &nbsp;
+            <% else %> <%= user.first_name %> <%= user.last_name %>
+            <% end %>
         </div>
         
+        <%= render partial: 'user_type', locals: { user: user } %>
         <% @reviews = Review.where(receiver_id: user.id) %>
         <% if @reviews.blank? %> <% @avg_review = 0 %>
         <% else %> <% @avg_review = @reviews.average(:rating) %>
@@ -50,8 +51,9 @@
 <% end %>
 </section>
 
+<div class="col-md-12 text-right">
 <%= will_paginate %>
-
+</div>
 
 <script>
     $('.star-rating').raty({

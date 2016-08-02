@@ -13,25 +13,23 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="field" id="pass-field">
+  <div class="field">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
   
   <% if devise_mapping.rememberable? -%>
-  <div class="field" id="remember-box-div">
-    <div class="field" id="remember-box-c">
+  <div id="tick-box-div">
+    <div id="tick-box-c">
       <%= f.check_box :remember_me %>
     </div>
-    <div class="field" id="remember-box-r">
+    <div id="tick-box-r">
       <%= f.label :remember_me %>
     </div>
   </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+  <%= f.submit "Log in", :class=>"btn-send" %>
 <% end %>
 
 <br />

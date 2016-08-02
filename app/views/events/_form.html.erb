@@ -1,4 +1,5 @@
 <%= form_for(@event) do |f| %>
+
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -16,7 +17,7 @@
     <%= f.text_field :event_name %>
   </div>
   <div class="field">
-    <%= f.label :desription %><br>
+    <%= f.label :description %><br>
     <%= f.text_area :desription %>
   </div>
   <div class="field">
@@ -24,10 +25,17 @@
     <%= f.date_select :date %>
   </div>
   <div class="field">
+    <%= f.label :time %><br>
+    <%= f.time_select :time %>
+  </div>
+  <div class="field">
     <%= f.label :location %><br>
     <%= f.text_field :location %>
   </div>
-  <div class="actions">
+  
+  <div class="actions col-md-6">
     <%= f.submit %>
   </div>
+  
+  
 <% end %>

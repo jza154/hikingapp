@@ -1,15 +1,33 @@
 <% provide(:title, "Edit Dog") %>
 
-<section class="page">
+<section id="form-section">
 <div class="container">
 <div class="row">
 
-<h1>Editing Dog</h1>
+<h1>Editing <%= @dog.name %>'s Info</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Cancel', @dog %> |
-<%= link_to 'Back', user_path(current_user) %>
+
+<div class="col-md-6">
+    
+    <%= render 'form' %>
+    
+    <div class="col-md-6 text-right">
+        <%= link_to 'Cancel', @dog, :class=>"back-btn" %>
+    </div>
+    
+</div>
+
+
+<div class="col-md-6 text-center" id="right-side-center">
+    <h3>Delete <%= @dog.name %>'s Profile?</h3>
+    <%= link_to 'Delete', @dog,
+        method: :delete,
+        data: { confirm: 'Are you sure?' },
+        :class=>"btn btn-danger" %>
+</div>
+
+
 
 </div>
 </div>

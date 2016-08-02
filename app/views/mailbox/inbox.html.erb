@@ -1,7 +1,9 @@
+<% provide(:title, "Inbox") %>
+
 <section class="page">
     <div class="container">
         <div class="row">
             <%= render partial: 'mailbox/folder_view', locals: { is_conversation: false, messages: @inbox } %>
         </div>
     </div>
-</secion>
+</section>

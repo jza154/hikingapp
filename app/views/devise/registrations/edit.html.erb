@@ -1,49 +1,86 @@
 <% provide(:title, "Edit Profile") %>
 
-<section class="page">
+<section id="form-section">
 <div class="container">
 <div class="row">
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true, method: :put }) do |f| %>
+
+<div class="col-md-6">
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true, method: :put }) do |f| %>
   <%= devise_error_messages! %>
-
-
-   <div class="field">
+  
+  <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, autofocus: true %>
   </div>
 
- <div class="field">
+  <div class="field">
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name, autofocus: true %>
   </div>
 
- <div class="field">
+  <div class="field">
     <%= f.label :birthday %><br />
     <%= f.date_select :birthday, start_year: 1950, end_year: 2020, autofocus: true  %>
   </div>
   
-  <div class="field">
+  <div id="tick-box-div">
+    <div id="tick-box-c">
+      <%= f.check_box :owner, value: "false" , autofocus: true %>
+    </div>
+    <div id="tick-box-r">
+      <%= f.label :owner, "Dog Owner" %>
+    </div>
+    <div id="tick-box-c">
+    <%= f.check_box :walker, value: "false" , autofocus: true %>
+    </div>
+    <div id="tick-box-r">
+    <%= f.label :walker, "Dog Walker" %>
+    </div>
+  </div>
+  
+  <div>
     <%= f.label :address %><br />
     <%= f.text_field :address, autofocus: true %>
   </div>
   
   <div class="field">
     <%= f.label :about %><br />
-    <%= f.text_field :about, autofocus: true %>
+      <%= f.text_field :about, autofocus: true %>
   </div>
   
   <div class="field">
     <%= f.label :image %><br />
-    <%= f.file_field :image, autofocus: true %>
+    <%= f.file_field :image, autofocus: true, :style=>"padding-bottom:45px;" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
+  
+  
+  
+  <div class="col-md-6">
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+  </div>
+  <div class="col-md-6 text-right">
+    <div>
+      <%= link_to "Back", :back, :class=>"back-btn" %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="col-md-4">
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
@@ -64,16 +101,26 @@
   <!--  < %= f.password_field :current_password, autocomplete: "off" %>-->
   <!--</div>-->
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+  
 <% end %>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<div class="field text-center">
+  
+  <h3>Cancel my account</h3>
+  We're sorry to see you go. If there is anything we can do to keep you, please let us know.
+  <div class="field">
+  <%= link_to "Delete Account", 
+      registration_path(resource_name),
+      data: { confirm: "Are you sure?" },
+      method: :delete,
+      :class=>"btn btn-danger" %>
+  </div>
+</p>
+
+</div>
+</div>
 
 </div>
 </div>

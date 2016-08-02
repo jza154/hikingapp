@@ -24,13 +24,15 @@ class PostsController < InheritedResources::Base
     #   @posts = Post.all.order('created_at DESC')
     # end
     # @posts=Post.search(params[:search])
-    @posts = Post.paginate(page: params[:page], per_page:3)
+    #@posts = Post.paginate(page: params[:page], per_page:3)
       @posts = Post.all
+         
      if params[:search]
        @posts = Post.search(params[:search]).order("created_at DESC")
      else
        @posts = Post.all.order('created_at DESC')
      end
+      @posts = Post.paginate(page: params[:page], per_page:4)
   end
   
   # GET /posts/1
@@ -83,7 +85,7 @@ class PostsController < InheritedResources::Base
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_url, notice: 'Post was successfully deleted.' }
       format.json { head :no_content }
     end
   end

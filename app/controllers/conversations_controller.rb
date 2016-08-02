@@ -2,6 +2,7 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    # @page = mailbox.trash.paginate(:page => params[:page], per_page: 2)
   end
 
   def create

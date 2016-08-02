@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   
-  # default_url_options :host => "doggie-walk-jza154.c9users.io"
-  
   resources :events
   resources :dogs
   resources :posts
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'index' => 'page#home'
@@ -35,7 +34,8 @@ Rails.application.routes.draw do
     resources :reviews, expect: [:index, :show]
     # resources :reviews, only: [:new, :index], expect: [:index]
   end
-    
+  
+  get "mailbox" => "mailbox#inbox"
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox
   get 'mailbox/sentbox' => 'mailbox#sentbox', as: :mailbox_sentbox
   get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash

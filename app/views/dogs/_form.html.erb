@@ -21,35 +21,38 @@
   </div>
   <div class="field">
     <%= f.label :age %><br>
-    <% if @dog.age != nil %>
-      <%= f.number_field :age, :step => 'any' %>
-    <% else %>
+    <% if @dog.age == nil %>
       <%= f.number_field :age, :step => 'any', value: '0' %>
+    <% else %>
+      <%= f.number_field :age, :step => 'any' %>
     <% end %>
   </div>
   <div class="field">
     <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+    <%= f.select :gender, options_for_select([['Male'], ['Female']]) %>
   </div>
   <div class="field">
-    <%= f.label :weight %><br>
+    <%= f.label :weight, "Weight (lbs)" %><br>
     <% if @dog.weight == nil %>
-      <%= f.text_field :weight,  value: '0' %>
+      <%= f.number_field :weight, :step => 'any', value: '0' %>
     <% else %>
-      <%= f.text_field :weight %>
+      <%= f.number_field :weight, :step => '0.1' %>
     <% end %>
   </div>
+  
   <div class="field">
     <%= f.label :about %><br>
     <%= f.text_area :about %>
   </div>
   
   <div class="field">
-    <%= f.label :dog_image %><br>
-    <%= f.file_field :dog_image %>
+    <%= f.label :dog_image, "Image" %><br>
+    <%= f.file_field :dog_image, :style=>"padding-bottom:45px;" %>
   </div>
   
-  <div class="actions">
+  <div class="spacer"></div>
+  
+  <div class="actions col-md-6">
     <%= f.submit %>
   </div>
 <% end %>

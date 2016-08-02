@@ -3,30 +3,48 @@
 <section class="page">
 <div class="container">
 <div class="row">
+  
+  
+<h1 class="wow fadeInDown post-title"><%= @post.title %></h1>
+<div class="field" id="post-meta">
+  Posted on <%= @post.created_at.strftime("%m/%d/%Y at %I:%M%p")  %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-<% @owner = User.find(@post.user_id)%>
-<p>
-  <strong>Created by:</strong>
-  <%= @owner.first_name %> <%= @owner.last_name %>
-  <strong>Created at:</strong>
-  <%= @post.created_at %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+<div class="col-md-6">
 
-<% if current_user.id == @post.user_id %>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<% end %>
+<div class="row">
+  <div class="field">
+    <div class="show-post-content" id="post-det">
+      <%= @post.content %>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Back', posts_path %>
+<div class="row">
+<div class="field">
+  <strong>Author</strong>
+  <div class="field" id="post-det">
+    <% @owner = User.find(@post.user_id) %>
+    <%= image_tag @owner.image.url(:thumb) %>
+    <%= @owner.first_name %> <%= @owner.last_name %>
+  </div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="field" id="post-btn-margin-top">
+  <% if current_user.id == @post.user_id %>
+    <%= link_to 'Edit', edit_post_path(@post) %> |
+    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <% end %>
+  <%= link_to 'Back', posts_path %>
+</div>
+</div>
+
+
+</div>
 
 </div>
 </div>

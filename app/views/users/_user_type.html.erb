@@ -1,0 +1,4 @@
+<% if user.owner && user.walker %> Owner and Walker
+<% elsif user.walker %> Walker 
+<% elsif user.owner %> Owner 
+<% else %> None <% end %>
