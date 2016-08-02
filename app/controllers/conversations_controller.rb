@@ -2,17 +2,14 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    # @page = mailbox.trash.paginate(:page => params[:page], per_page: 2)
   end
 
   def create
-    if (conversation_params[:body].present? && conversation_params[:body].present? && conversation_params[:recipsients].present?)
-      recipients = User.where(id: conversation_params[:recipsients])
-      conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
-      flash[:success] = "Your message was successfully sent!"
-      redirect_to conversation_path(conversation)
-    else
-      render 'new'
-    end
+    recipients = User.where(id: conversation_params[:recipients])
+    conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
+    flash[:success] = "Your message was successfully sent!"
+    redirect_to conversation_path(conversation)
   end
 
   def show
