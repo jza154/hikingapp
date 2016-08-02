@@ -56,11 +56,11 @@ end
 # end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :posts
-  has_many :events
+  has_many :posts, dependent: :destroy
+  has_many :events, dependent: :destroy
   has_many :dogs, dependent: :destroy
   has_many :reviews #, dependent: :destroy
-  has_many :events
+  has_many :events, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

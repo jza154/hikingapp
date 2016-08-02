@@ -286,6 +286,13 @@ form .buttons, form .actions {
   padding-top: 200px;
 }
 
+.big-text {
+  text-size: 18px;
+}
+.small-text {
+  text-size: 2em;
+}
+
 /* copied */
 
 section h2.section-heading0-agency {
@@ -302,7 +309,7 @@ section h3.section-subheading-agency {
   margin-bottom: 75px;
 }
 
-/* CSS TIMELINE FOR HOMGEPAGE */
+/* CSS TIMELINE FOR HOMEPAGE */
 
 #h4-step-text {
   color: black;

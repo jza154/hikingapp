@@ -1,6 +1,8 @@
 class EventsController < InheritedResources::Base
       before_action :authenticate_user!
-
+      before_action :event_owner, only: [:edit, :update, :destroy]
+      # before_action :set_post, only: [:show, :edit, :update, :destroy]
+      
     def index 
         @events= Event.all
         @events_by_date = Event.all.group_by {|i| i.date}
@@ -29,5 +31,17 @@ class EventsController < InheritedResources::Base
       params.require(:event).permit(:event_name, :desription, :date, :location, :time)
     end
     
+    
+    # def set_event
+      
+    # end
+    
+    def event_owner
+      @events = Event.find(params[:id])
+     unless @events.user_id == current_user.id
+      flash[:notice] = 'Access denied as you are not the manger of this Event'
+      redirect_to event_path(@events)
+     end
+    end
     
 end
