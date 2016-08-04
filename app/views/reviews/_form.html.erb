@@ -18,14 +18,19 @@
     <!--< %= f.label :rating %><br>-->
     <!--< %= f.number_field :rating %>-->
     <% if @review.rating != nil %>
-      <div>Youa are now editing your previous rating for <%= @receiver.first_name %>, your previous rating was: <%= @review.rating %></div>
+      <div>
+        You are now editing your previous rating for <%= @receiver.first_name %>.
+      </div>
+      <div>
+        Your previous rating was <%= @review.rating %>
+      </div>
     <% end %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>
     <%= f.text_area :comment %>
   </div>
-  <div class="actions">
+  <div class="actions col-md-6">
     <%= f.submit %>
   </div>
 <% end %>

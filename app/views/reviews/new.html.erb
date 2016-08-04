@@ -1,15 +1,20 @@
 <% provide(:title, "New Review") %>
 
-<section class="page">
+<section id="form-section">
 <div class="container">
 <div class="row">
+<div class="col-md-6">
     
 <h1>New Review</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Cancel', user_path(@receiver.id) %>
+<div class="col-md-6 text-right">
+<%= link_to 'Cancel', user_path(@receiver.id), :class=>"back-btn" %>
+</div>
 
+
+</div>
 </div>
 </div>
 </section>

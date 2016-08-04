@@ -1,16 +1,20 @@
 <% provide(:title, "Edit Review") %>
 
-<section class="page">
+<section id="form-section">
 <div class="container">
 <div class="row">
+<div class="col-md-6">
 
 <h1>Editing Review</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Cancel', user_path(@review.receiver_id) %>
+<div class="col-md-6 text-right">
+<%= link_to 'Cancel', user_path(@review.receiver_id), :class=>"back-btn" %>
 <!--< %= link_to 'Delete', user_path(@review.receiver_id), :confirm => "'Are you sure?", :method => :delete  %>-->
+</div>
 
+</div>
 </div>
 </div>
 </section>

@@ -13,18 +13,18 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
   </div>
   <div class="field">
     <%= f.label :breed %><br>
-    <%= f.text_field :breed %>
+    <%= f.text_field :breed, required: true %>
   </div>
   <div class="field">
     <%= f.label :age %><br>
     <% if @dog.age == nil %>
       <%= f.number_field :age, :step => 'any', value: '0' %>
     <% else %>
-      <%= f.number_field :age, :step => 'any' %>
+      <%= f.number_field :age, :step => 'any', required: true %>
     <% end %>
   </div>
   <div class="field">
@@ -36,7 +36,7 @@
     <% if @dog.weight == nil %>
       <%= f.number_field :weight, :step => 'any', value: '0' %>
     <% else %>
-      <%= f.number_field :weight, :step => '0.1' %>
+      <%= f.number_field :weight, :step => '0.1', required: true %>
     <% end %>
   </div>
   
