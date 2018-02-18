@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180218003359) do
+ActiveRecord::Schema.define(version: 20180218014557) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -155,6 +155,14 @@ ActiveRecord::Schema.define(version: 20180218003359) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "trail_name"
+    t.string   "region"
+    t.string   "difficulty"
+    t.string   "season"
+    t.float    "distance"
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"

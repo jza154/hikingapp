@@ -98,7 +98,7 @@ class PostsController < InheritedResources::Base
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :image)
+      params.require(:post).permit(:title, :trail_name, :region,:difficulty,:distance,:season,:location,:image)
     end
     
     def post_owner

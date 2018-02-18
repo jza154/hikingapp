@@ -15,7 +15,7 @@ class EventsController < InheritedResources::Base
       @events.user_id = current_user.id
       respond_to do |format|
       if @events.save
-        format.html { redirect_to @events, notice: 'Dog was successfully created.' }
+        format.html { redirect_to @events, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @events }
       else
         format.html { render :new }
