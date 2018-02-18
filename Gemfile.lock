@@ -108,6 +108,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     i18n (0.7.0)
+    imagemagick-identify (0.0.1)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
       has_scope (~> 0.6.0.rc)
@@ -257,6 +258,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   geocoder
+  imagemagick-identify (~> 0.0.1)
   jbuilder (~> 2.0)
   jquery-rails
   mailboxer
@@ -276,4 +278,4 @@ DEPENDENCIES
   will_paginate
 
 BUNDLED WITH
-   1.12.5
+   1.16.1

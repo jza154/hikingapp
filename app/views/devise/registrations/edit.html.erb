@@ -27,21 +27,6 @@
     <%= f.date_select :birthday, start_year: 1950, end_year: 2020, autofocus: true  %>
   </div>
   
-  <div id="tick-box-div">
-    <div id="tick-box-c">
-      <%= f.check_box :owner, value: "false" , autofocus: true %>
-    </div>
-    <div id="tick-box-r">
-      <%= f.label :owner, "Dog Owner" %>
-    </div>
-    <div id="tick-box-c">
-    <%= f.check_box :walker, value: "false" , autofocus: true %>
-    </div>
-    <div id="tick-box-r">
-    <%= f.label :walker, "Dog Walker" %>
-    </div>
-  </div>
-  
   <div>
     <%= f.label :address %><br />
     <%= f.text_field :address, autofocus: true %>
