@@ -14,25 +14,13 @@ class PostsController < InheritedResources::Base
   #   end
   # end
   
-
+  
   def index
-    # criteria = params[:search]
-    # @posts = Post.where('text LIKE ?', "%#{criteria}%")
-    # if params[:search]
-    #   @posts = Post.search(params[:search]).order("created_at DESC")
-    # else
-    #   @posts = Post.all.order('created_at DESC')
-    # end
-    # @posts=Post.search(params[:search])
-    #@posts = Post.paginate(page: params[:page], per_page:3)
-      @posts = Post.all
-         
-     if params[:search]
-       @posts = Post.search(params[:search]).order("created_at DESC")
-     else
-       @posts = Post.all.order('created_at DESC')
-     end
-      @posts = Post.paginate(page: params[:page], per_page:4)
+  if params[:search].present?
+    @posts = Post.near(params[:search], 50, :order => :distance)
+  else
+    @posts = Post.all
+  end
   end
   
   # GET /posts/1
@@ -98,7 +86,7 @@ class PostsController < InheritedResources::Base
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :trail_name, :region,:difficulty,:distance,:season,:location,:image)
+      params.require(:post).permit(:title, :trail_name, :region,:difficulty,:distance,:season,:location,:image,:latitude,:longitude)
     end
     
     def post_owner

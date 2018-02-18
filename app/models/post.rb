@@ -26,7 +26,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  
+  geocoded_by :location
+  after_validation :geocode, :if => :location_changed?
   # geocoded_by:location 
   # after_validation :geocode, if: ->(obj){ obj.location.present? and obj.location_changed? }
   # after_validation :lat_changed?
